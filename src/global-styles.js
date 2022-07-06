@@ -22,7 +22,4 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
-html {
-  font-family: sans-serif;
-}
 `;

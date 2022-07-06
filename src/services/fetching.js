@@ -1,7 +1,7 @@
 export const fetchPokemons = async () => {
   //1154 pokemnos in total
   const response = await fetch(
-    'https://pokeapi.co/api/v2/pokemon?offset=0&limit=1150'
+    'https://pokeapi.co/api/v2/pokemon?offset=0&limit=1154'
   );
   if (response.status === 200) {
     const pokemons = await response.json();

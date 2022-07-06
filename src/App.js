@@ -16,12 +16,26 @@ export const App = () => {
     setLoading(false);
   }, []);
 
+  // Get current pokemons
   const lastPokemonIndex = currentPage * pokemonsPerPage;
   const firstPokemonIndex = lastPokemonIndex - pokemonsPerPage;
   const currentPokemon = pokemons?.results?.slice(
     firstPokemonIndex,
     lastPokemonIndex
   );
+
+  //Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const nextPage = () => {
+    if (currentPage < 116) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+  const previousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
 
   return (
     <StyledWrapper>
@@ -30,6 +44,9 @@ export const App = () => {
       <Pagination
         pokemonsPerPage={pokemonsPerPage}
         totalPokemons={pokemons.results?.length}
+        paginate={paginate}
+        nextPage={nextPage}
+        previousPage={previousPage}
       />
     </StyledWrapper>
   );
@@ -38,10 +55,9 @@ const StyledWrapper = styled.div`
   background-color: #3d7dca;
 `;
 const StyledHeader = styled.h1`
-  margin-left: 50px;
+  margin: 0 50px;
   font-family: 'Pokemon Solid', sans-serif;
-  font-size: 50px;
-  font-weight: 600;
+  font-size: 30px;
   color: #ffcb05;
   text-shadow: 3px 3px 0 #003a70, -1px -1px 0 #003a70, 1px -1px 0 #003a70,
     -1px 1px 0 #003a70, 1px 1px 0 #003a70;
