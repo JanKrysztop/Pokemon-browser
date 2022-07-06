@@ -1,15 +1,20 @@
 import styled from 'styled-components';
+import sitting from '../images/sitting.svg';
+import standing from '../images/standing.png';
 
 export const Pokemon = ({ pokemons, loading }) => {
   if (loading) {
     return <h2>Loading...</h2>;
   }
   return (
-    <ul>
-      {pokemons?.map((pokemon) => (
-        <StyledPokemon key={pokemon.name}>{pokemon.name}</StyledPokemon>
-      ))}
-    </ul>
+    <div style={{ display: 'flex', margin: '0 auto', width: '1100px' }}>
+      <img src={standing} style={{ height: '500px', marginRight: '40px' }} />
+      <ul>
+        {pokemons?.map((pokemon) => (
+          <StyledPokemon key={pokemon.name}>{pokemon.name}</StyledPokemon>
+        ))}
+      </ul>
+    </div>
   );
 };
 
