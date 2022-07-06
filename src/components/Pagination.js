@@ -6,6 +6,7 @@ export const Pagination = ({
   paginate,
   nextPage,
   previousPage,
+  currentPage,
 }) => {
   const pageNumbers = [];
 
@@ -48,9 +49,6 @@ const StyledListItem = styled.li`
   padding: 0 5px;
   display: flex;
   flex-wrap: wrap;
-  &:active {
-    color: #b28e03;
-  }
 `;
 
 const StyledLink = styled.a`

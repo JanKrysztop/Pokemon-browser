@@ -47,11 +47,14 @@ export const App = () => {
         paginate={paginate}
         nextPage={nextPage}
         previousPage={previousPage}
+        currentPage={currentPage}
       />
     </StyledWrapper>
   );
 };
 const StyledWrapper = styled.div`
+  min-width: 430px;
+  max-height: 100%;
   background-color: #3d7dca;
 `;
 const StyledHeader = styled.h1`
